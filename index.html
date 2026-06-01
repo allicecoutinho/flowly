@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FLOWLY.</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Efeitos de fundo -->
+
+    <div class="blur blur-1"></div>
+    <div class="blur blur-2"></div>
+
+    <main class="container">
+
+        <!-- Cabeçalho -->
+
+        <header class="hero">
+
+            <h1>FLOWLY.</h1>
+
+            <p class="subtitle">
+                Por onde vamos começar?
+            </p>
+
+        </header>
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <div class="card-status">
+
+                <h3 id="contadorPendentes">
+                    0
+                </h3>
+
+                <p>
+                    A realizar
+                </p>
+
+            </div>
+
+            <div class="card-status">
+
+                <h3 id="contadorConcluidas">
+                    0
+                </h3>
+
+                <p>
+                    Realizadas
+                </p>
+
+            </div>
+
+            <div class="card-status">
+
+                <h3 id="contadorExcluidas">
+                    0
+                </h3>
+
+                <p>
+                    Excluídas
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Navegação -->
+
+        <section class="tabs">
+
+            <button class="tab active"
+                    data-filtro="geral">
+                Geral
+            </button>
+
+            <button class="tab"
+                    data-filtro="pendentes">
+                A Realizar
+            </button>
+
+            <button class="tab"
+                    data-filtro="concluidas">
+                Realizadas
+            </button>
+
+            <button class="tab"
+                    data-filtro="excluidas">
+                Excluídas
+            </button>
+
+        </section>
+
+        <!-- Formulário -->
+
+        <section class="formulario">
+
+            <input
+                type="text"
+                id="tituloTarefa"
+                placeholder="O que precisa ser feito?">
+
+            <textarea
+                id="comentarioTarefa"
+                placeholder="Adicione observações, detalhes ou lembretes (opcional)"></textarea>
+
+            <div class="linha-inferior">
+
+                <button id="btnAdicionar">
+                    Adicionar tarefa
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Estado vazio -->
+
+        <section id="estadoVazio">
+
+            <h2>
+                Sem tarefas pendentes.
+            </h2>
+
+            <p>
+                Bom trabalho!
+            </p>
+
+        </section>
+
+        <!-- Lista -->
+
+        <section class="lista-container">
+
+            <ul id="listaTarefas">
+
+                <!--
+                    As tarefas serão
+                    inseridas pelo JavaScript
+                -->
+
+            </ul>
+
+        </section>
+
+        <!-- Rodapé -->
+
+        <footer class="footer">
+
+            <p>
+
+                Precisa organizar uma equipe?
+
+                <span>
+                    Conheça o FLOWLY BUSINESS.
+                </span>
+
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- JQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
