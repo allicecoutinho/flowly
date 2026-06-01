@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg: #f6f7fb;
+
+    --glass:
+        rgba(255,255,255,0.40);
+
+    --glass-border:
+        rgba(255,255,255,0.55);
+
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+
+    --blue: #0071e3;
+    --green: #34c759;
+    --red: #ff3b30;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+    --shadow-hover:
+        0 25px 80px rgba(0,0,0,.12);
+}
+
+/* ==========================================
+    BODY
+========================================== */
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff 0%,
+            #f6f7fb 45%,
+            #ffffff 100%
+        );
+
+    min-height: 100vh;
+
+    color: var(--text-primary);
+
+    padding: 50px 25px;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+/* ==========================================
+   BOLHAS GLASS
+========================================== */
+
+.blur {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    z-index: -1;
+}
+
+.blur-1 {
+
+    width: 450px;
+    height: 450px;
+
+    background:
+        rgba(0,113,227,.18);
+
+    top: -150px;
+    left: -120px;
+}
+
+.blur-2 {
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        rgba(52,199,89,.10);
+
+    bottom: -180px;
+    right: -150px;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: 40px;
+
+    padding: 50px;
+
+    box-shadow: var(--shadow);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 5rem;
+
+    font-weight: 700;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d1d1f,
+            #55555b
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+
+    color: var(--text-secondary);
+
+    font-size: 1.15rem;
+}
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+.card-status {
+
+    background:
+        rgba(255,255,255,.35);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid
+        rgba(255,255,255,.5);
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.04);
+
+    transition: .3s;
+}
+
+.card-status:hover {
+
+    transform: translateY(-3px);
+}
+
+.card-status h3 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 8px;
+}
+
+.card-status p {
+
+    color: var(--text-secondary);
+}
+
+/* ==========================================
+   TABS
+========================================== */
+
+.tabs {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.tab {
+
+    border: none;
+
+    background:
+        rgba(255,255,255,.55);
+
+    backdrop-filter: blur(20px);
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    color: var(--text-primary);
+
+    font-size: .95rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.tab:hover {
+
+    transform: translateY(-2px);
+}
+
+.tab.active {
+
+    background: var(--blue);
+
+    color: white;
+}
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.formulario {
+
+    background:
+        rgba(255,255,255,.35);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid
+        rgba(255,255,255,.5);
+
+    border-radius: 32px;
+
+    padding: 30px;
+
+    margin-bottom: 40px;
+}
+
+#tituloTarefa,
+#comentarioTarefa {
+
+    width: 100%;
+
+    border: none;
+
+    background:
+        rgba(255,255,255,.60);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    margin-bottom: 15px;
+}
+
+#tituloTarefa:focus,
+#comentarioTarefa:focus {
+
+    box-shadow:
+        0 0 0 4px rgba(0,113,227,.15);
+}
+
+#comentarioTarefa {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.linha-inferior {
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+#btnAdicionar {
+
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 18px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#btnAdicionar:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(0,113,227,.25);
+}
+
+/* ==========================================
+   ESTADO VAZIO
+========================================== */
+
+#estadoVazio {
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+#estadoVazio h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+#estadoVazio p {
+
+    color: var(--text-secondary);
+}
+
+/* ==========================================
+   LISTA
+========================================== */
+
+#listaTarefas {
+
+    list-style: none;
+}
+
+/* ==========================================
+   CARD DE TAREFA
+========================================== */
+
+.tarefa {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background:
+        rgba(255,255,255,.40);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid
+        rgba(255,255,255,.5);
+
+    border-radius: 30px;
+
+    padding: 28px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.04);
+
+    transition: .3s;
+}
+
+.tarefa:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow-hover);
+}
+
+.tarefa-info {
+
+    flex: 1;
+}
+
+.titulo {
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.comentario {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+}
+
+/* ==========================================
+   CONCLUÍDA
+========================================== */
+
+.tarefa.concluida {
+
+    background:
+        rgba(52,199,89,.12);
+
+    border-color:
+        rgba(52,199,89,.25);
+}
+
+.tarefa.concluida .titulo {
+
+    text-decoration: line-through;
+
+    opacity: .75;
+}
+
+/* ==========================================
+   AÇÕES
+========================================== */
+
+.acoes {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 180px;
+}
+
+/* ==========================================
+   BOTÃO CONCLUIR
+========================================== */
+
+.btn-check {
+
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-check:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(52,199,89,.25);
+}
+
+/* ==========================================
+   BOTÃO EXCLUIR
+========================================== */
+
+.btn-delete {
+
+    border: none;
+
+    background: var(--red);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-delete:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255,59,48,.25);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 70px;
+}
+
+.footer p {
+
+    color: var(--text-secondary);
+
+    font-size: .95rem;
+}
+
+.footer span {
+
+    color: var(--text-primary);
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.footer span:hover {
+
+    color: var(--blue);
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+
+        font-size: 3.5rem;
+    }
+
+    .tarefa {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .acoes {
+
+        flex-direction: row;
+
+        min-width: auto;
+    }
+
+    .btn-check,
+    .btn-delete {
+
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding: 25px;
+    }
+
+    .hero h1 {
+
+        font-size: 2.8rem;
+    }
+
+    .subtitle {
+
+        font-size: 1rem;
+    }
+}
